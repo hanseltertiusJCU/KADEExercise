@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +30,10 @@ class MainActivity : AppCompatActivity() {
         initData()
 
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = RecyclerViewAdapter(this, items)
+        list.adapter = RecyclerViewAdapter(this, items){
+            val toast = Toast.makeText(applicationContext, it.name, Toast.LENGTH_SHORT)
+            toast.show()
+        }
 
 
     }

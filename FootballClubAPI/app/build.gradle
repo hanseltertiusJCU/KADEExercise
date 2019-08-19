@@ -7,6 +7,10 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
     defaultConfig {
+
+        buildConfigField "String", "BASE_URL", '"https://www.thesportsdb.com/"'
+        buildConfigField "String", "TSDB_API_KEY", '"1"'
+
         applicationId "com.example.footballclubapi"
         minSdkVersion 21
         targetSdkVersion 29

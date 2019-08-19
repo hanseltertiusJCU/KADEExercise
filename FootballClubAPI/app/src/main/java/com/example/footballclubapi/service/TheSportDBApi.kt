@@ -1,6 +1,7 @@
-package com.example.footballclubapi
+package com.example.footballclubapi.service
 
 import android.net.Uri
+import com.example.footballclubapi.BuildConfig
 
 object TheSportDBApi {
     fun getTeams(league : String?) : String {

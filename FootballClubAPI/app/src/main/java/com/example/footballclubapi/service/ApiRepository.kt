@@ -1,4 +1,4 @@
-package com.example.footballclubapi
+package com.example.footballclubapi.service
 
 import java.net.URL
 

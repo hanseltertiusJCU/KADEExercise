@@ -1,4 +1,4 @@
-package com.example.footballclubapi
+package com.example.footballclubapi.model
 
 import com.google.gson.annotations.SerializedName
 

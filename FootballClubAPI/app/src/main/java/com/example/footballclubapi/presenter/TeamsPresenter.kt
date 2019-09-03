@@ -3,14 +3,14 @@ package com.example.footballclubapi.presenter
 import com.example.footballclubapi.model.TeamResponse
 import com.example.footballclubapi.service.ApiRepository
 import com.example.footballclubapi.service.TheSportDBApi
-import com.example.footballclubapi.view.MainView
+import com.example.footballclubapi.view.TeamsView
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-class MainPresenter(private val view : MainView,
-                    private val apiRepository: ApiRepository,
-                    private val gson: Gson){
+class TeamsPresenter(private val view : TeamsView,
+                     private val apiRepository: ApiRepository,
+                     private val gson: Gson){
 
     fun getTeamList(league : String?) {
         view.showLoading()

@@ -31,7 +31,7 @@ class MyDatabaseOpenHelper (ctx : Context) : ManagedSQLiteOpenHelper(ctx, "Favor
         db.dropTable(Favorite.TABLE_FAVORITE, true)
     }
 
-    val Context.database : MyDatabaseOpenHelper
-    get() = getInstance(applicationContext)
-
 }
+
+val Context.database : MyDatabaseOpenHelper
+    get() = MyDatabaseOpenHelper.getInstance(applicationContext)

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.footballclubapi.R
+import com.example.footballclubapi.activity.TeamDetailActivity
 import com.example.footballclubapi.adapter.TeamsAdapter
 import com.example.footballclubapi.model.Team
 import com.example.footballclubapi.presenter.TeamsPresenter
@@ -40,7 +41,9 @@ class TeamsFragment : Fragment(), TeamsView {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        adapter = TeamsAdapter(teams)
+        adapter = TeamsAdapter(teams){
+            context?.startActivity<TeamDetailActivity>("id" to "${it.teamId}")
+        }
         listTeam.adapter = adapter
 
         val request = ApiRepository()

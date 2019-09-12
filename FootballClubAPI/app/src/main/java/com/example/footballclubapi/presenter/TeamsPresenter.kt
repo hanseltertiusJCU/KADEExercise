@@ -5,6 +5,9 @@ import com.example.footballclubapi.service.ApiRepository
 import com.example.footballclubapi.service.TheSportDBApi
 import com.example.footballclubapi.view.TeamsView
 import com.google.gson.Gson
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
@@ -14,16 +17,15 @@ class TeamsPresenter(private val view : TeamsView,
 
     fun getTeamList(league : String?) {
         view.showLoading()
-        doAsync {
+        GlobalScope.launch(Dispatchers.Main) {
             val data = gson.fromJson(
-                apiRepository.doRequest(TheSportDBApi.getTeams(league)),
+                apiRepository.doRequest(TheSportDBApi.getTeams(league)).await(),
                 TeamResponse::class.java
             )
 
-            uiThread {
-                view.hideLoading()
-                view.showTeamList(data.teams)
-            }
+            view.showTeamList(data.teams)
+            view.hideLoading()
+
         }
     }
 }

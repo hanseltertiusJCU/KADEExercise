@@ -10,7 +10,6 @@ import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
-import org.junit.Assert.*
 import org.junit.Before
 import org.mockito.ArgumentMatchers
 import org.mockito.Mock

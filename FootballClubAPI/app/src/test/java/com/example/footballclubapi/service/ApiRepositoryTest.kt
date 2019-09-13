@@ -2,7 +2,6 @@ package com.example.footballclubapi.service
 
 import org.junit.Test
 
-import org.junit.Assert.*
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 

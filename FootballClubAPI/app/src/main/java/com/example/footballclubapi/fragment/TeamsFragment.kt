@@ -83,7 +83,9 @@ class TeamsFragment : Fragment(), TeamsView {
             leftPadding = dip(16)
             rightPadding = dip(16)
 
-            spinner = spinner()
+            spinner = spinner{
+                id = R.id.spinner
+            }
             swipeRefresh = swipeRefreshLayout {
                 setColorSchemeResources(
                     R.color.colorAccent,

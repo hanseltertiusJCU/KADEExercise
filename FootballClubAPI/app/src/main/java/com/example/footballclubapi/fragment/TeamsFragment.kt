@@ -95,6 +95,7 @@ class TeamsFragment : Fragment(), TeamsView {
                     lparams(width = matchParent, height = wrapContent)
 
                     listTeam = recyclerView {
+                        id = R.id.list_team
                         lparams(width = matchParent, height = wrapContent)
                         layoutManager = LinearLayoutManager(context)
                     }
